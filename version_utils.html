@@ -27,9 +27,11 @@
       <li><a href="#is_microos">is_microos</a></li>
       <li><a href="#is_leap_micro">is_leap_micro</a></li>
       <li><a href="#is_sle_micro">is_sle_micro</a></li>
+      <li><a href="#is_micro">is_micro</a></li>
       <li><a href="#is_alp">is_alp</a></li>
       <li><a href="#is_selfinstall">is_selfinstall</a></li>
       <li><a href="#is_tumbleweed">is_tumbleweed</a></li>
+      <li><a href="#is_slowroll">is_slowroll</a></li>
       <li><a href="#is_leap">is_leap</a></li>
       <li><a href="#is_opensuse">is_opensuse</a></li>
       <li><a href="#is_sle">is_sle</a></li>
@@ -60,12 +62,14 @@
       <li><a href="#uses_qa_net_hardware">uses_qa_net_hardware</a></li>
       <li><a href="#get_os_release">get_os_release</a></li>
       <li><a href="#check_os_release">check_os_release</a></li>
+      <li><a href="#verify_os_version">verify_os_version</a></li>
       <li><a href="#is_public_cloud">is_public_cloud</a></li>
       <li><a href="#is_openstack">is_openstack</a></li>
       <li><a href="#is_leap_migration">is_leap_migration</a></li>
       <li><a href="#is_tunneled">is_tunneled</a></li>
       <li><a href="#is_bootloader_grub2">is_bootloader_grub2</a></li>
       <li><a href="#is_bootloader_sdboot">is_bootloader_sdboot</a></li>
+      <li><a href="#is_plasma6">is_plasma6</a></li>
       <li><a href="#has_test_issues">has_test_issues</a></li>
       <li><a href="#package_version_cmp">package_version_cmp</a></li>
       <li><a href="#is_quarterly_iso">is_quarterly_iso</a></li>
@@ -129,6 +133,10 @@
 
 <p>Check if distribution is SUSE Linux Enterprise Micro</p>
 
+<h2 id="is_micro">is_micro</h2>
+
+<p>Check if distribution is any of MicroOS, Leap Micro or SL-Micro</p>
+
 <h2 id="is_alp">is_alp</h2>
 
 <p>Check if distribution is ALP</p>
@@ -140,6 +148,10 @@
 <h2 id="is_tumbleweed">is_tumbleweed</h2>
 
 <p>Returns true if called on tumbleweed</p>
+
+<h2 id="is_slowroll">is_slowroll</h2>
+
+<p>Returns true if called on slowroll</p>
 
 <h2 id="is_leap">is_leap</h2>
 
@@ -295,13 +307,17 @@
 </dd>
 </dl>
 
+<h2 id="verify_os_version">verify_os_version</h2>
+
+<p>Returns 1 (true) if os release version matches the one passed as arguement. If no arguements are given, the function will compare the os release version in /etc/os-release file with &quot;VERSION&quot; var.</p>
+
 <h2 id="is_public_cloud">is_public_cloud</h2>
 
 <p>Returns true if PUBLIC_CLOUD is set to 1</p>
 
 <h2 id="is_openstack">is_openstack</h2>
 
-<p>Returns true if JEOS_OPENSTACK is set to 1</p>
+<p>Returns true if the tests loads Cloud image in OpenStack environment NO_CLOUD variable is set in order to test the image in QEMU</p>
 
 <h2 id="is_leap_migration">is_leap_migration</h2>
 
@@ -318,6 +334,10 @@
 <h2 id="is_bootloader_sdboot">is_bootloader_sdboot</h2>
 
 <p>Returns true if the SUT uses systemd-boot as bootloader</p>
+
+<h2 id="is_plasma6">is_plasma6</h2>
+
+<p>Returns true if the SUT uses Plasma 6.</p>
 
 <h2 id="has_test_issues">has_test_issues</h2>
 
